@@ -1,0 +1,61 @@
+<script>
+$('<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ipsum nulla, vulputate ut nulla a, porta accumsan odio. Nunc viverra tellus eu elit lobortis pretium. Sed ut sagittis tellus, at convallis justo. Morbi blandit dui justo, vel dapibus ligula sagittis in. Nullam hendrerit ex erat, id commodo nibh fringilla ut. Integer eu justo lorem. Vivamus aliquam dolor eget facilisis placerat. Fusce eget feugiat purus, ac tincidunt nisi. Integer vel eleifend massa, a iaculis magna.Donec porta, felis quis sollicitudin euismod, lectus ante semper ante, sed consectetur enim enim et risus. Vivamus id justo tortor. Pellentesque vestibulum cursus volutpat. Donec fermentum aliquam lacus, mollis efficitur ex vehicula ultrices. Aenean luctus nibh interdum egestas tincidunt. Aenean vitae metus dictum, auctor massa quis, iaculis nulla. Etiam eget metus nec lectus posuere condimentum. Fusce purus odio, mollis vitae auctor vel, hendrerit ut leo.Morbi lacinia sapien in mi dapibus, et pharetra eros sollicitudin. Aliquam et commodo dui, bibendum efficitur ante. Vivamus fringilla odio orci. Fusce tristique diam sit amet rhoncus consectetur. Mauris sed volutpat orci. Sed sit amet pharetra sapien. Donec vitae neque id purus elementum sollicitudin. Curabitur quis bibendum purus. Sed in tempor enim. Donec sit amet magna eget orci aliquet porta eu venenatis urna.Suspendisse eu eros sit amet nisi porta rhoncus ut in leo. Sed at bibendum ipsum. Nam ornare feugiat nibh non tincidunt. Etiam mauris nisl, mattis rutrum magna ut, mollis lacinia mi. Praesent ipsum magna, interdum ac eleifend ac, tempor et risus. Donec augue elit, vulputate in commodo a, tincidunt a dui. Nunc consectetur, orci sit amet venenatis congue, ex leo malesuada lorem, sit amet scelerisque tortor mi et ligula. Proin sit amet mollis tortor, ac laoreet felis. Donec rutrum justo et orci facilisis, sit amet mattis mauris lobortis. Aenean quis feugiat mi, et luctus nulla. Nunc mi nunc, tincidunt quis semper nec, tincidunt a diam. Etiam a nibh urna.</p>')
+.appendTo(".news-paragraph");
+</script>
+<section id="news">
+<h2 class="text-center">Новини</h2>
+
+<div ng-controller='DemoController'>
+
+<div class="container">
+
+
+
+<div class="row">
+
+<div class="col-md-5 col-sm-12">
+
+
+  <div ng-repeat="article in articles1" class="news-article">
+
+      <h3 class="news-heading">{{article.data.title}}</h3>
+      <p class="news-author">
+        by {{article.data.author}}
+      </p>
+      <small class="news-time">{{article.data.created | date : "EEEE 'at' H:mma" }}</small>
+      <p class="news-paragraph">
+        {{article.data.selftext}}
+      </p>
+</div>
+
+</div>
+
+
+
+<div class="col-md-5 col-sm-12 col-md-offset-2">
+
+
+  <div ng-repeat="article in articles2" class="news-article">
+
+    <h3 class="news-heading">{{article.data.title}}</h3>
+    <p class="news-author">
+      by {{article.data.author}}
+    </p>
+    <small class="news-time">{{article.data.created | date : "EEEE 'at' H:mma" }}</small>
+    <p class="news-paragraph">
+      {{article.data.selftext}}
+    </p>
+
+</div>
+
+</div>
+
+<!--row -->
+</div>
+
+</div>
+
+</div>
+
+
+</section>

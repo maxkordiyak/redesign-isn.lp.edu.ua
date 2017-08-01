@@ -1,0 +1,13 @@
+<section id="staff">
+  <h2 class="text-center">Колектив кафедри ІСМ</h2>
+  <div class="container">
+    <ul>
+      <li ng-repeat="person in $ctrl.people" class="col-md-3 col-sm-3 col-xs-6 col-xxs-12">
+        <a ui-sref="person({ personId: person.id })">
+          <img src="{{ person.img }}" class="img-responsive" />
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</section>

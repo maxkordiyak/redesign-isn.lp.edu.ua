@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Quando" rel="stylesheet" />
+  <link rel="stylesheet" href="components/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+
+<body ng-app="isn" ng-strict-di>
+
+  <header class="header">
+
+  <nav>
+    <ul>
+      <div class="logo">
+        <a href="#">
+          <img src="images\header-logo.svg" alt="Logo" class="logo-img" />
+        </a>
+      </div>
+      <li><a href="#">Головна</a></li>
+      <li><a ui-sref="public.news">Новини</a></li>
+      <li><a ui-sref="public.staff">Колектив</a></li>
+      <li><a ui-sref="public.projects">Проекти</a></li>
+      <li><a ui-sref="public.contacts">Контакти</a></li>
+      <li><a ui-sref="public.about">Про кафедру</a></li>
+      <li>
+        <a href="">Абітурієнтам</a>
+        <ul>
+          <li><a href="#">Конкусні предмети</a></li>
+          <li><a href="#">Два</a></li>
+          <li><a href="#">Three</a></a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  </header>
+
+  <div class="parallax">
+
+    <div class="wrapper__img">
+      <img src="images/logo_isn_reverted.svg"/>
+      <h1>Кафедра ІСМ</h1>
+      <span>a short sentence or phrase chosen as encapsulating the beliefs or ideals of an individual, family, or institution.</span>
+    </div>
+
+  </div>
+
+  <section id="publications">
+
+      <div class="row">
+
+        <div class="col-lg-17 publ-tile" style="background-image:url('https://c1.staticflickr.com/7/6054/6277208708_7e6607d601_b.jpg');">
+          <span class="publ-tile-icon"></span>
+          <img class="img-responsive" src="https://c1.staticflickr.com/7/6054/6277208708_7e6607d601_b.jpg"  />
+          <h3 class="sliding-middle-out publ-h3-text____shadow"><a ui-sref="public.publications" target="_blank">Publications</a></h3>
+        </div>
+
+        <div class="col-lg-17 publ-tile" style="background-image:url('images/google-v-Google-scholar.png');">
+          <span class="publ-tile-icon"></span>
+          <img class="img-responsive" src="images/google-v-Google-scholar.png" />
+          <h3 class="sliding-middle-out publ-h3-text____shadow">Bachelorship</h3>
+        </div>
+
+        <div class="col-lg-17 publ-tile" style="background-image:url('images/research-tile.jpg');">
+          <span class="publ-tile-icon"></span>
+          <img class="img-responsive" src="images/research-tile.jpg" />
+          <h3 class="sliding-middle-out publ-h3-text____shadow">Research</h3>
+        </div>
+
+        <div class="col-lg-17 publ-tile" style="background-image:url('images/magnif-glass-tile.jpg');">
+          <span class="publ-tile-icon"></span>
+          <img class="img-responsive" src="images/magnif-glass-tile.jpg" />
+          <h3 class="sliding-middle-out publ-h3-text____shadow">Scholarship</h3>
+        </div>
+
+        <div class="col-lg-17 publ-tile" style="background-image:url('images/dissert.jpg');">
+          <span class="publ-tile-icon"></span>
+          <img class="img-responsive" src="images/dissert.jpg" />
+          <h3 class="sliding-middle-out publ-h3-text____shadow">Dissertations</h3>
+        </div>
+
+        <div class="col-lg-17 publ-tile" style="background-image:url('images/people_twoplanetz.jpg');">
+          <span class="publ-tile-icon"></span>
+          <img class="img-responsive" src="images/people_twoplanetz.jpg" />
+          <h3 class="sliding-middle-out publ-h3-text____shadow">Careers</h3>
+        </div>
+
+        <div class="col-lg-17 publ-tile" style="background-image:url('https://www.mysciencework.com/media/20151129/9b72812e502c2614d106764c746d53c1178922d8.png');">
+          <span class="publ-tile-icon"></span>
+          <img class="img-responsive" src="https://www.mysciencework.com/media/20151129/9b72812e502c2614d106764c746d53c1178922d8.png" />
+          <h3 class="sliding-middle-out">Articles</h3>
+        </div>
+
+      </div>
+
+  </section>
+
+  <!-- Fixed position loading indicator -->
+  <ui-view>
+    <loading class="loading-indicator"></loading>
+  </ui-view>
+
+  <footer id="global-footer">
+    <div class="container">
+      <div class="row footer-row">
+        <div class="text-center">
+         <a href="#">Головна</a>
+         <a href="#">API</a>
+         <a href="#">RSS</a>
+         <a href="#">Sitemap</a>
+        </div>
+      </div>
+
+      <span>
+        Copyright &copy; 2017 Кафедра "Інформаційні системи та мережі"
+      </span>
+
+    </div>
+  </footer>
+
+  <!-- Libs -->
+  <script src="components/bower_components/jquery/dist/jquery.js"></script>
+  <script src="components/bower_components/jquery.menu-aim.js"></script>
+  <script src="components/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.js"></script>
+  <script src="https://code.angularjs.org/1.6.1/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-resource.js"></script>
+  <script src="https://code.angularjs.org/1.6.1/angular-animate.min.js"></script>
+  <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="components/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js"></script>
+
+  <!-- Main Site Module -->
+  <script src="components/isn.module.js"></script>
+  <script src="components/app.js"></script>
+
+  <!-- Common Module -->
+  <script src="components/common/common.module.js"></script>
+  <script src="components/common/loading/loading.component.js"></script>
+  <script src="components/common/loading/loading.interceptor.js"></script>
+
+  <!-- Public Module -->
+  <script src="components/public/public.module.js"></script>
+  <script src="components/public/public.routes.js"></script>
+  <script src="components/public/news/news.controller.js"></script>
+  <script src="components/public/about/about.controller.js"></script>
+  <script src="components/public/staff/staff.service.js"></script>
+  <script src="components/public/staff/staff.component.js"></script>
+  <script src="components/public/staff/person.component.js"></script>
+
+  <!-- Utilities -->
+  <script src="components/bower_components/ngmap/build/scripts/ng-map.min.js"></script>
+  <script src="http://maps.google.com/maps/api/js"></script>
+
+</body>
+
+</html>
