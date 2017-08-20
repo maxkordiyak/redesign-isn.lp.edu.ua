@@ -1,18 +1,9 @@
-var $root = $('html, body');
-    $('#parallax-landingAnchor').click(function() {
-    $root.animate({
-        scrollTop: $( $.attr(this, 'href') ).offset().top
-    }, 500);
-    return false;
-});
+var thoughtsModule = (function () {
 
-$(function(){
-    function shuffle(o){
-      for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-      return o;
-  };
+  var personThoughts, shufflePerson;
 
-  var personThoughts = [];
+  personThoughts = [];
+
   personThoughts[0] = new Image();
   personThoughts[0].src = "images/person/1.png";
   personThoughts[0].name = "Андруник В.А";
@@ -59,24 +50,37 @@ $(function(){
   personThoughts[8].rank = "асистент";
   personThoughts[8].paragraph = "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga";
 
-  setInterval(nextPerson, 30000);
+  shufflePerson = function (o) {
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+  };
 
-  function nextPerson() {
-    personThoughts = shuffle(personThoughts);
-    $('.person-thoughts img').fadeOut();
-    $('.person-thoughts img').each(function(i){
-      $(this).attr('src', personThoughts[i].src).fadeIn();
-      $(this).attr('alt', personThoughts[i].name);
+  return {
 
-    });
-    $('.person-thoughts figcaption').fadeOut();
-    $('.person-thoughts figcaption').each(function(i){
-      $(this).html('<strong>' + personThoughts[i].name + '</strong>' + '.,' + '<span>' + personThoughts[i].rank + '</span>').fadeIn();
-    });
-    $('.person-thoughts p').fadeOut();
-    $('.person-thoughts p').each(function(i){
-      $(this).html(personThoughts[i].paragraph).fadeIn();
-    });
+    nextPerson: function() {
 
-  }
-});
+      var periodicTextChange = setInterval(function() {
+
+        personThoughts = shufflePerson(personThoughts);
+        $('.person-thoughts img').fadeOut();
+        $('.person-thoughts img').each(function(i){
+          $(this).attr('src', personThoughts[i].src).fadeIn();
+          $(this).attr('alt', personThoughts[i].name);
+        });
+        $('.person-thoughts figcaption').fadeOut();
+        $('.person-thoughts figcaption').each(function(i){
+          $(this).html('<strong>' + personThoughts[i].name + '</strong>' + '.,' + '<span>' + personThoughts[i].rank + '</span>').fadeIn();
+        });
+        $('.person-thoughts p').fadeOut();
+        $('.person-thoughts p').each(function(i){
+          $(this).html(personThoughts[i].paragraph).fadeIn();
+        });
+      }, 30000);
+
+    }
+
+  };
+
+})();
+
+thoughtsModule.nextPerson();
